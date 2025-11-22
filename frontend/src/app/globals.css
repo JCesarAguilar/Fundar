@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@theme {
+  --color-black-strong: #000000;
+  --color-black-medium: #101010;
+  --color-black-soft: #191919;
+  --color-gray-strong: #4f4f4f;
+  --color-gray-medium: #9f9f9f;
+  --color-gray-soft: #f1f1f1;
+  --color-white-strong: #ffffff;
+  --color-white-smoke: #fafafa;
+  --color-yellow-strong: #ffc03b;
+  --color-blue-strong: #1212de;
+  --color-blue-medium: #1253de;
+  --color-blue-soft: #5c85de;
+  --color-bluesky-strong: #43b7fc;
+  --color-bluesky-soft: #65dae0;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-proxima: var(--font-proxima);
+  --font-kazimir: var(--font-kazimir);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-proxima), sans-serif;
+}
+
+.form-label {
+  @apply font-bold text-black-medium;
+}
+
+.form-label-sec {
+  @apply block text-sm font-medium;
+}
+
+.form-input {
+  @apply p-3 border border-gray-medium rounded-md;
+}
+
+.form-input-sec {
+  @apply w-full border rounded-lg p-2;
+}
+
+.btn-primary {
+  @apply bg-bluesky-strong text-black-medium py-3 px-7 rounded font-semibold cursor-pointer hover:bg-bluesky-soft transition;
+}
+
+.btn-form-primary {
+  @apply w-full bg-blue-strong text-white-smoke py-3 rounded-md font-bold cursor-pointer hover:bg-blue-medium transition;
+}
+
+.btn-form-secondary {
+  @apply w-full border-2 border-blue-medium text-blue-medium py-3 rounded-md font-bold hover:border-blue-strong hover:text-blue-strong cursor-pointer transition;
+}
+
+.nav-items {
+  @apply text-black-strong cursor-pointer font-semibold hover:underline hover:decoration-yellow-strong hover:decoration-2 hover:underline-offset-4 text-[14px] lg:text-[16px];
+}
